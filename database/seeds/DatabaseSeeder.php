@@ -22,16 +22,10 @@ class DatabaseSeeder extends Seeder
 
           $vacancy = \App\Vacancy::create([
             'title' => 'Desenvolvedor Frontend',
-            'responsabilities' => 'Transformar layouts (XD e Photoshop) em montagens responsivas utilizando HTML + CSS + JS;
-                                   Integrar montagem com APIs desenvolvidas por outras equipes;
-                                   Manter e melhorar a base de código existente corrigindo bugs e refatorando código quando necessário.',
+            'responsabilities' => 'Transformar layouts (XD e Photoshop) em montagens responsivas utilizando HTML + CSS + JS; Integrar montagem com APIs desenvolvidas por outras equipes; Manter e melhorar a base de código existente corrigindo bugs e refatorando código quando necessário.',
             'location' => 'Natal - RN - Brasil',
-            'skills' => 'Possua habilidades arquiteturais para desenvolvimento de software;
-                         Goste de trabalhar em equipe;
-                         Seja focado, proativo, tenha boa comunicação e relacionamento interpessoal.',
-            'works' => 'WordPress e sistemas em PHP em geral;
-                        Webpack e Bootstrap;
-                        Frameworks javascript modernos (Vue 2, React).',
+            'skills' => 'Possua habilidades arquiteturais para desenvolvimento de software; Goste de trabalhar em equipe; Seja focado, proativo, tenha boa comunicação e relacionamento interpessoal.',
+            'works' => 'WordPress e sistemas em PHP em geral; Webpack e Bootstrap; Frameworks javascript modernos (Vue 2, React).',
             'status' => 'open'
           ]);
 
