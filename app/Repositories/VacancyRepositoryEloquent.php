@@ -6,6 +6,7 @@ use App\Vacancy;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Contracts\CacheableInterface;
 use Prettus\Repository\Traits\CacheableRepository;
+use Prettus\Repository\Criteria\RequestCriteria;
 
 /**
  * Class CategoryRepositoryEloquent
@@ -14,6 +15,14 @@ use Prettus\Repository\Traits\CacheableRepository;
 class VacancyRepositoryEloquent extends BaseRepository implements VacancyRepository, CacheableInterface
 {
     use CacheableRepository;
+
+    protected $fieldSearchable = [
+        'title' => 'like',
+        'responsabilities' => 'like',
+        'skills' => 'like',
+        'location' => 'like'
+    ];
+
     /**
      * Specify Model class name
      *
@@ -29,6 +38,6 @@ class VacancyRepositoryEloquent extends BaseRepository implements VacancyReposit
      */
     public function boot()
     {
-        //
+        $this->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
     }
 }

@@ -3,44 +3,34 @@
 @section('content')
     @include('shared.messages')
 
-    @if($fields['vacancies'])
-        <div class="row">
-            <div class="col-md-10">
-                <h1>Todas as vaga</h1>
-            </div>
-            <div class="col-md-2">
-                <a href="{{ action('VacancyController@create')}}">Criar vaga</a>
-            </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            Filtro
+    <div class="row">
+      <div class="col-md-10">
+        <h1>Todas as vaga</h1>
+      </div>
+      <div class="col-md-2">
+        <a href="{{ action('VacancyController@create')}}">Criar vaga</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Filtro
+      </div>
+      <div class="card-body">
+        {!! Form::open(['route' => ['vacancies'], 'method'=>'get'])!!}
+          <div class="form-group">
+            {!! Form::label('term', 'Termo: ') !!}
+            {!! Form::text('search', null, ['class'=>'form-control',
+              'placeholder' => 'Título, responsabilidades, habilidades, localização']) !!}
           </div>
-          <div class="card-body">
 
-            {!! Form::open(['route' => ['vacancy.filter'], 'method'=>'post'])!!}
-              <div class="form-group">
-                  {!! Form::label('term', 'Título ou habilidade: ') !!}
-                  {!! Form::text('term', null, ['class'=>'form-control',
-                                'placeholder' => 'ex: frontend']) !!}
-              </div>
-
-              <div class="form-group">
-                  {!! Form::label('status', 'Status: ') !!} <br/>
-                  Todos {!! Form::checkbox('status', 'all', true); !!}
-                  Em aberto {!! Form::checkbox('status', 'open', false); !!}
-                  Fechados {!! Form::checkbox('status', 'close', false); !!}
-              </div>
-
-              <div class="form-group">
-                  {!! Form::submit('Buscar', ['class'=>'btn btn-primary']) !!}
-              </div>
-            {!! Form::close() !!}
-
+          <div class="form-group">
+            {!! Form::submit('Buscar', ['class'=>'btn btn-primary']) !!}
           </div>
-        </div>
+        {!! Form::close() !!}
 
+      </div>
+    </div>
+    @if($fields['vacancies']->count())
         <table class="mt-4 table table-striped table-bordered table-hover">
             <tr>
                 <th>Titulo</th>
@@ -69,6 +59,8 @@
         </table>
         {{ $fields['vacancies']->links() }}
     @else
+      <div class="mt-4 text-center">
         <h2> Não há vagas </h2>
+      </div>
     @endif
 @stop

@@ -5,25 +5,22 @@ namespace App\Http\Controllers;
 use App\Vacancy;
 use App\Http\Requests\VacancyRequest;
 use App\Repositories\VacancyRepository;
+use Illuminate\Http\Request;
 
 class VacancyController extends Controller
 {
     private $repository;
-    private $view = 'vacancy.index';
 
-    /**
-     * VacancyController constructor.
-     * @param VacancyRepository $repository
-     */
     public function __construct(VacancyRepository $repository) {
         $this->middleware('auth');
         $this->repository = $repository;
     }
 
-    public function index() {
-        $this->msg['fields']['vacancies'] = $this->repository->paginate(self::PAGINATE);
+    public function index(Request $request) {
+        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
+        $this->msg['fields']['vacancies'] = $this->repository->paginate(self:PAGINATE);
 
-        return view($this->view)->with($this->msg);
+        return view('vacancy.index')->with($this->msg);
     }
 
     public function create() {

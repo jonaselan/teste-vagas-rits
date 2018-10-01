@@ -28,5 +28,4 @@ Route::group(['prefix' => 'vagas', 'middleware' => 'auth', 'where'=>['id'=>'[0-9
     Route::get('editar/{id}', 'VacancyController@edit')->name('vacancy.edit');
     Route::put('{id}', 'VacancyController@update')->name('vacancy.update');
     Route::get('deletar/{id}', 'VacancyController@destroy')->name('vacancy.destroy');
-    Route::post('filtrar', 'VacancyController@index')->name('vacancy.filter');
 });
