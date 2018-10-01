@@ -25,9 +25,10 @@ Route::group(['prefix' => 'vagas', 'middleware' => 'auth', 'where'=>['id'=>'[0-9
     Route::get('', 'VacancyController@index')->name('vacancies');
     Route::get('criar', 'VacancyController@create')->name('vacancy.create');
     Route::post('', 'VacancyController@store')->name('vacancy.store');
-    Route::get('editar/{id}', 'VacancyController@edit')->name('vacancy.edit');
+    Route::get('{id}/editar', 'VacancyController@edit')->name('vacancy.edit');
+    Route::put('{id}/status', 'VacancyController@change_status')->name('vacancy.change_status');
     Route::put('{id}', 'VacancyController@update')->name('vacancy.update');
-    Route::get('deletar/{id}', 'VacancyController@destroy')->name('vacancy.destroy');
+    Route::get('{id}/deletar', 'VacancyController@destroy')->name('vacancy.destroy');
 });
 
 // Candidates

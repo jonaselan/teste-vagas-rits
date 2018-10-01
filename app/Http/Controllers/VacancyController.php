@@ -54,6 +54,17 @@ class VacancyController extends Controller
                          ->with($this->msg);
     }
 
+    public function change_status(Request $request, $id){
+      $vacancy = $this->repository->update(['status' => $request->status], $id);
+      if ($vacancy)
+          $this->msg['success'][] = "Status mudado para $request->status";
+      else
+          $this->msg['error'][] = "Erro ao atualizar status";
+
+      return redirect()->action('VacancyController@index')
+                       ->with($this->msg);
+    }
+
     public function destroy($id) {
         try {
             $vacancy = $this->repository->find($id);

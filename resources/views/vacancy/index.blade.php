@@ -44,15 +44,26 @@
                     <td>{{ $v->location }} </td>
                     <td>{{ $v->candidates->count() }} </td>
                     <td>
-                        {{-- <a href="{{action('VacancyController@show', $v->id)}}">
-                            <i class="fas fa-eye-alt"></i>
-                        </a> --}}
-                        <a href="{{action('VacancyController@edit', $v->id)}}">
-                            <i class="fas fa-pencil-alt"></i>
-                        </a>
-                        <a href="{{action('VacancyController@destroy', $v->id)}}" onclick="return confirm('Tem certeza?');">
+                      <div class="row">
+                        <div class="col-md-1">
+                          {{ Form::model(null, ['method' => 'put', 'route' => ['vacancy.change_status', $v->id]]) }}
+                              <input type="text" hidden value="{{$v->status == 'aberto' ? 'fechado' : 'aberto'}}" name="status">
+                              <a href="#" onclick="$(this).closest('form').submit()">
+                                <i class="fas fa-toggle-{{$v->status == 'aberto' ? 'off' : 'on'}}"></i>
+                              </a>
+                          {!! Form::close() !!}
+                        </div>
+                        <div class="col-md-1">
+                          <a href="{{action('VacancyController@edit', $v->id)}}">
+                              <i class="fas fa-pencil-alt"></i>
+                          </a>
+                        </div>
+                        <div class="col-md-1">
+                          <a href="{{action('VacancyController@destroy', $v->id)}}" onclick="return confirm('Tem certeza?');">
                             <i class="fas fa-trash-alt"></i>
-                        </a>
+                          </a>
+                        </div>
+                      </div>
                     </td>
                 </tr>
             @endforeach
