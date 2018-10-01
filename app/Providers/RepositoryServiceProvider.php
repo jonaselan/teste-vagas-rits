@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Repositories\VacancyRepository;
-use app\Repositories\VacancyRepositoryEloquent;
+use App\Repositories\VacancyRepositoryEloquent;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider

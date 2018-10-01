@@ -2,10 +2,10 @@
 {{-- retorno de $msg do controller via view --}}
 
 @if(!empty($success))
-    <div class="alert alert-success alert-dismissable fade in">
+    <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         @foreach($success as $value)
-            <span class="glyphicon glyphicon-ok"></span>
+            <i class="fas fa-ok-alt"></i>
             {{ $value }}
 
             <br>
@@ -14,7 +14,7 @@
 @endif
 
 @if(!empty($warning))
-    <div class="alert alert-warning alert-dismissable fade in">
+    <div class="alert alert-warning alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         @foreach($warning as $value)
             <span class="glyphicon glyphicon-warning-sign"></span>
@@ -37,7 +37,7 @@
 {{-- retorno de $msg do controller via session --}}
 
 @if(session('success'))
-    <div class="alert alert-success alert-dismissable fade in">
+    <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         @foreach(session('success') as $value)
             <span class="glyphicon glyphicon-ok"></span>
@@ -48,7 +48,7 @@
 @endif
 
 @if(session('warning'))
-    <div class="alert alert-warning alert-dismissable fade in">
+    <div class="alert alert-warning alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
     @foreach(session('warning') as $value)
@@ -73,10 +73,10 @@
 
 @if($errors->any())
     <div class="alert alert-danger">
-    @foreach($errors->all() as $error)
-            <span class="glyphicon glyphicon-alert"></span>
+      @foreach($errors->all() as $error)
+          <span class="glyphicon glyphicon-alert"></span>
             {{ $error }}
-            <br>
-        @endforeach
+          <br>
+      @endforeach
     </div>
 @endif

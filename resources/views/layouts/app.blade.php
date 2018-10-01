@@ -13,7 +13,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
@@ -33,7 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ route('vacancies') }}">Vagas</a>
+                      </li>
+                      {{-- <li class="nav-item">
+                          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                      </li> --}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -72,7 +77,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 container">
             @yield('content')
         </main>
     </div>
