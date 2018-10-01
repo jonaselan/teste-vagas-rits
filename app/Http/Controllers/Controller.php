@@ -10,4 +10,13 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    protected const PAGINATE = 10;
+
+    protected $msg = [
+     'error' => [],
+     'warning' => [],
+     'success' => [],
+     'fields' => []
+    ];
 }
