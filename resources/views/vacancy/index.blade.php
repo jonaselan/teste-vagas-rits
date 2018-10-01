@@ -38,7 +38,7 @@
                 <th>Número de candidatos</th>
                 <th>Opções</th>
             </tr>
-            @foreach($fields['vacancies'] as $v)
+            @foreach($fields['vacancies'] as $key => $v)
                 <tr>
                     <td>{{ $v->title }} </td>
                     <td>{{ $v->location }} </td>
@@ -63,12 +63,19 @@
                             <i class="fas fa-trash-alt"></i>
                           </a>
                         </div>
+                        <div class="col-md-1">
+                          <a role="button" data-toggle="modal" class="modal-show" data-target="#candidates-{{ $key }}" href title="candidates">
+                            <i class="fas fa-users"></i>
+                          </a>
+                        </div>
                       </div>
                     </td>
                 </tr>
             @endforeach
         </table>
         {{ $fields['vacancies']->links() }}
+
+        @each('vacancy.candidates', $fields['vacancies'], 'vacancy')
     @else
       <div class="mt-4 text-center">
         <h2> Não há vagas </h2>
