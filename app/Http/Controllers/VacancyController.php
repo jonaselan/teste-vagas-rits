@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Vacancy;
 use App\Http\Requests\VacancyRequest;
 use App\Repositories\VacancyRepository;
 use Illuminate\Http\Request;
@@ -18,7 +17,7 @@ class VacancyController extends Controller
 
     public function index(Request $request) {
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $this->msg['fields']['vacancies'] = $this->repository->paginate(self:PAGINATE);
+        $this->msg['fields']['vacancies'] = $this->repository->paginate(self::PAGINATE);
 
         return view('vacancy.index')->with($this->msg);
     }

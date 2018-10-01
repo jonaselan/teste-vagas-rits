@@ -8,7 +8,7 @@ class Candidate extends Model
 {
     protected $guarded = [];
 
-    public function candidates(){
+    public function vacancy(){
         return $this->belongsTo(Vacancy::class);
     }
 

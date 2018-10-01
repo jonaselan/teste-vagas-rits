@@ -23,7 +23,8 @@ class CreateCandidatesTable extends Migration
             $table->string('github');
             $table->float('desired_salary');
             $table->string('curriculum');
-            $table->enum('english', ['basic', 'intermediate', 'advanced']);
+            $table->enum('status', ['candidatado', 'analisado', 'negado', 'contratado'])->default('candidatado');
+            $table->enum('english', ['básico', 'intermediario', 'avançado']);
             $table->integer('vacancy_id')->unsigned()->nullable();
             $table->foreign('vacancy_id')->references('id')->on('vacancies');
 

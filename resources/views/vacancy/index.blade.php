@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     @include('shared.messages')
 
     <div class="row">
       <div class="col-md-10">
-        <h1>Todas as vaga</h1>
+        <h1>Vagas</h1>
       </div>
       <div class="col-md-2">
         <a href="{{ action('VacancyController@create')}}">Criar vaga</a>

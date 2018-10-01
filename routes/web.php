@@ -29,3 +29,10 @@ Route::group(['prefix' => 'vagas', 'middleware' => 'auth', 'where'=>['id'=>'[0-9
     Route::put('{id}', 'VacancyController@update')->name('vacancy.update');
     Route::get('deletar/{id}', 'VacancyController@destroy')->name('vacancy.destroy');
 });
+
+// Candidates
+Route::group(['prefix' => 'curriculos', 'middleware' => 'auth', 'where'=>['id'=>'[0-9]+']], function () {
+    Route::get('', 'CandidateController@index')->name('candidates');
+    Route::get('{id}/status/{status}', 'CandidateController@update')->name('candidate.status');
+    Route::get('deletar/{id}', 'CandidateController@destroy')->name('candidate.destroy');
+});

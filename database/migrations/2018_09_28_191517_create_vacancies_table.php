@@ -18,7 +18,7 @@ class CreateVacanciesTable extends Migration
             $table->string('title');
             $table->text('responsabilities');
             $table->text('skills');
-            $table->enum('status', ['open', 'close'])->default('open');
+            $table->enum('status', ['aberto', 'fechado'])->default('aberto');
             $table->string('location');
             $table->string('works');
             $table->timestamps();
