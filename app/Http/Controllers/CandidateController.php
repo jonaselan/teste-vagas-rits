@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\CandidateRepository;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\CandidateRequest;
 
 class CandidateController extends Controller
 {
@@ -35,6 +36,16 @@ class CandidateController extends Controller
 
         return redirect()->action('CandidateController@index')
                          ->with($this->msg);
+    }
+
+    public function create(string $id){
+      $this->msg['fields']['candidate'] = $this->repository->find($id);
+
+      return view('candidate.create')->with($this->msg);
+    }
+
+    public function store(CandidateRequest $request){
+
     }
 
 }

@@ -20,7 +20,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="gallery" src="{{ asset('img/rits-carreiras.png') }}" />
@@ -39,7 +39,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Nossos valores</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item vacancy-link">
                             <a class="nav-link" href="#">Vagas abertas</a>
                         </li>
                     </ul>
@@ -47,7 +47,7 @@
             </div>
         </nav>
 
-        <main class="py-4 container">
+        <main>
             @yield('content')
         </main>
 

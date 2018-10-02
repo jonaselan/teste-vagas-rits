@@ -1,0 +1,23 @@
+// Colors
+$white: #FFFFFF;
+$green: #ACCB34;
+$green-light: #D3EA55;
+$purple: #563C8F;
+$purple-light: #6F59AA;
+$gray: #4D4D4D;
+$gray-light: #F1F1F1;
+$gray2: #231F20;
+$red: #EF3F6E;
+$transparent: rgba(255, 255, 255, 0);
+
+.color-white {
+  color: $white;
+}
+
+.color-green {
+  color: $green;
+}
+
+.color-green-light {
+  color: $green-light;
+}
