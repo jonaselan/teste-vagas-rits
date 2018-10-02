@@ -11,7 +11,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background-color: $gray-light;
+  background-color: $white;
 }
 
 // ---- layout
@@ -56,13 +56,13 @@ body {
   border-radius: 4px;
   border: $green solid 1px;
   text-transform: uppercase;
-  color: $green;
+  color: $green !important;
   background-color: $transparent;
   font-weight: $thin;
   transition: 0.3s;
 
   &:hover {
-    color: $gray;
+    color: $gray !important;
   }
 }
 
@@ -71,12 +71,12 @@ body {
   background: $green;
   border-radius: 4px;
   text-transform: uppercase;
-  color: $purple;
+  color: $purple !important;
   font-weight: $thin;
   transition: 0.3s;
 
   &:hover {
-    color: $gray-light;
+    color: $gray-light !important;
   }
 }
 
@@ -98,12 +98,12 @@ body {
 
 }
 
-// ---- end layout
+// ---- endlayout
 
 // ---- home
 
 // header
-.header-rits{
+#header-rits{
   background-image: url("/img/astronaut_header.png");
   background-size: cover;
   height: 630px;
@@ -120,7 +120,7 @@ body {
   }
 }
 // about
-.about-rits {
+#about-rits {
   margin-top: 7%;
   margin-bottom: 10%;
 
@@ -142,13 +142,12 @@ body {
   }
 }
 // values
-.values-rits {
+#values-rits {
   color: $white;
   background-image: url("/img/background.png");
   background-size: cover;
   height: 795px;
   background-repeat: no-repeat;
-  margin-bottom: 10%;
 
   h1, h2 {
     font-weight: $normal;
@@ -160,6 +159,12 @@ body {
 
   h2 {
     font-size: $extra-medium;
+  }
+
+  .values-mosaic{
+    img {
+      height: 400px;
+    }
   }
 
   .card {
@@ -181,10 +186,12 @@ body {
     // }
   }
 }
-
 // vacancies
-.vacancies-rits {
-  margin-bottom: 7%;
+#vacancies-rits {
+  padding-top: 10%;
+  padding-bottom: 7%;
+  background-color: $gray-light;
+
   h1 {
     text-align: center;
     font-weight: $normal;
@@ -207,4 +214,12 @@ body {
     }
   }
 }
-// ---- end home
+// ---- endhome
+
+// vaga
+#create-candidate {
+  margin-top: 10%;
+  color: $purple;
+
+}
+// ----- endvaga

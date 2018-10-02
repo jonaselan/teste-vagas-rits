@@ -34,13 +34,13 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">A Rits</a>
+                            <a class="nav-link" href="#about-rits">A Rits</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nossos valores</a>
+                            <a class="nav-link" href="#values-rits">Nossos valores</a>
                         </li>
                         <li class="nav-item vacancy-link">
-                            <a class="nav-link" href="#">Vagas abertas</a>
+                            <a class="nav-link" href="#vacancies-rits">Vagas abertas</a>
                         </li>
                     </ul>
                 </div>

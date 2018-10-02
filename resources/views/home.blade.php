@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="header-rits">
+    <section id="header-rits">
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-4">
@@ -18,20 +18,19 @@
                 </p>
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
-                        <button class="btn btn1">+ sobre a gente</button>
+                        <a class="btn btn1">+ sobre a gente</a>
                     </div>
                     <div class="col-md-6 col-sm-6">
-                        <button class="btn btn2">confira as vagas</button>
+                        <a class="btn btn2">confira as vagas</a>
                     </div>
                 </div>
             </div>
           </div>
         </div>
       </div>
-
     </section>
 
-    <section class="about-rits">
+    <section id="about-rits">
       <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -48,10 +47,10 @@
                 </p>
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-6">
-                        <button class="btn btn1">Valores da gente</button>
+                        <a class="btn btn1">Valores da gente</a>
                     </div>
                     <div class="col-lg-6 col-md-12 col-6">
-                        <button class="btn btn2">confira as vagas</button>
+                        <a class="btn btn2">confira as vagas</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +66,10 @@
       </div>
     </section>
 
-    <section class="values-rits">
+    <section id="values-rits">
+      <div class="values-mosaic">
+        <img src="{{asset('img/mosaic.png')}}" alt="">
+      </div>
       <div class="container">
         <div class="col-12 offset-md-0 offset-lg-3">
           <div class="col-12">
@@ -127,7 +129,7 @@
       </div>
     </section>
 
-    <section class="vacancies-rits">
+    <section id="vacancies-rits">
       <div class="container">
         <div class="row justify-content-center">
             <h1>VAGAS EM ABERTO</h1>
@@ -136,19 +138,23 @@
           <p>Conheça as oportunidades que temos em aberto.</p>
         </div>
         <div class="row justify-content-center">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-9">
-                  <p class="card-title">Card title</p>
-                  <p class="card-text"><img src="{{ asset('img/point.png') }}" alt=""> With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="col-lg-3">
-                  <a href="#" class="btn btn2">candidate-se</a>
+          @foreach($fields['vacancies'] as $v)
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-9">
+                    <p class="card-title">{{ $v->title }}</p>
+                    <p class="card-text"><img src="{{ asset('img/point.png') }}" alt="">
+                      {{ $v->location }}
+                    </p>
+                  </div>
+                  <div class="col-lg-3">
+                    <a href="{{action('CandidateController@create', $v->id) }}" class="btn btn2">candidate-se</a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </section>

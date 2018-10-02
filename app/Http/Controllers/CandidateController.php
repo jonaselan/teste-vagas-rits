@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Vacancy;
 use App\Repositories\CandidateRepository;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\CandidateRequest;
@@ -11,7 +12,7 @@ class CandidateController extends Controller
     private $repository;
 
     public function __construct(CandidateRepository $repository) {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['create', 'store']]);
         $this->repository = $repository;
     }
 
@@ -39,13 +40,20 @@ class CandidateController extends Controller
     }
 
     public function create(string $id){
-      $this->msg['fields']['candidate'] = $this->repository->find($id);
-
+      $this->msg['fields']['vacancy'] = Vacancy::find($id);
+      
       return view('candidate.create')->with($this->msg);
     }
 
     public function store(CandidateRequest $request){
+      $candidate = $this->repository->create($request->all());
+      // if ($candidate = $this->repository->create($request->all())) {
+      //     $this->msg['success'][] = "Vaga cadastrada com sucesso!";
+      // } else {
+      //     $this->msg['error'][] = 'Erro! Vaga não foi cadastrada';
+      // }
 
+      return redirect()->action('HomeController@site');
     }
 
 }

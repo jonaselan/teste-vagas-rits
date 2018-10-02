@@ -11,16 +11,19 @@
 <div class="form-group">
     {!! Form::label('skills', 'Habilidades:') !!} <span class="text-danger">*</span>
     {!! Form::text('skills', null, ['class'=>'form-control']) !!}
+      <small class="text-muted">Separe por ; (ponto e virgula)</small>
 </div>
 
 <div class="form-group">
     {!! Form::label('responsabilities', 'Responsabilidades:') !!} <span class="text-danger">*</span>
     {!! Form::text('responsabilities', null, ['class'=>'form-control']) !!}
+      <small class="text-muted">Separe por ; (ponto e virgula)</small>
 </div>
 
 <div class="form-group">
     {!! Form::label('works', 'Tarefas Diárias:') !!} <span class="text-danger">*</span>
     {!! Form::text('works', null, ['class'=>'form-control']) !!}
+      <small class="text-muted">Separe por ; (ponto e virgula)</small>
 </div>
 
 <div class="form-group">
