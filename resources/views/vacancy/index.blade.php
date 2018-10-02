@@ -48,23 +48,23 @@
                         <div class="col-md-1">
                           {{ Form::model(null, ['method' => 'put', 'route' => ['vacancy.change_status', $v->id]]) }}
                               <input type="text" hidden value="{{$v->status == 'aberto' ? 'fechado' : 'aberto'}}" name="status">
-                              <a href="#" onclick="$(this).closest('form').submit()">
+                              <a href="#" onclick="$(this).closest('form').submit()" title="Mudar status">
                                 <i class="fas fa-toggle-{{$v->status == 'aberto' ? 'off' : 'on'}}"></i>
                               </a>
                           {!! Form::close() !!}
                         </div>
                         <div class="col-md-1">
-                          <a href="{{action('VacancyController@edit', $v->id)}}">
+                          <a href="{{action('VacancyController@edit', $v->id)}}" title="Editar">
                               <i class="fas fa-pencil-alt"></i>
                           </a>
                         </div>
                         <div class="col-md-1">
-                          <a href="{{action('VacancyController@destroy', $v->id)}}" onclick="return confirm('Tem certeza?');">
+                          <a href="{{action('VacancyController@destroy', $v->id)}}" onclick="return confirm('Tem certeza?');" title="Apagar">
                             <i class="fas fa-trash-alt"></i>
                           </a>
                         </div>
                         <div class="col-md-1">
-                          <a role="button" data-toggle="modal" class="modal-show" data-target="#candidates-{{ $key }}" href title="candidates">
+                          <a role="button" data-toggle="modal" class="modal-show" data-target="#candidates-{{ $key }}" href title="Candidatos">
                             <i class="fas fa-users"></i>
                           </a>
                         </div>

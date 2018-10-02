@@ -17,7 +17,7 @@ class VacancyController extends Controller
 
     public function index(Request $request) {
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $this->msg['fields']['vacancies'] = $this->repository->paginate(self::PAGINATE);
+        $this->msg['fields']['vacancies'] = $this->repository->with(['candidates'])->paginate(self::PAGINATE);
 
         return view('vacancy.index')->with($this->msg);
     }

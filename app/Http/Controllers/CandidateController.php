@@ -15,7 +15,7 @@ class CandidateController extends Controller
     }
 
     public function index() {
-        $this->msg['fields']['candidates'] = $this->repository->paginate(self::PAGINATE);
+        $this->msg['fields']['candidates'] = $this->repository->with(['vacancy'])->paginate(self::PAGINATE);
 
         return view('candidate.index')->with($this->msg);
     }

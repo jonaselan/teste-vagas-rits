@@ -23,12 +23,23 @@
                     <td>{{ $c->vacancy->title }} </td>
                     <td>{{ date("d-m-Y", strtotime($c->created_at)) }} </td>
                     <td>
-                        <a role="button" data-toggle="modal" class="modal-show btn btn-default" data-target="#details-{{ $key }}" href title="Details">
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a href="{{action('CandidateController@destroy', $c->id)}}" onclick="return confirm('Tem certeza?');">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
+                      <div class="row">
+                        <div class="col-md-1">
+                          <a role="button" data-toggle="modal" class="modal-show" data-target="#details-{{ $key }}" href title="Details">
+                            <i class="fas fa-eye"></i>
+                          </a>
+                        </div>
+                        <div class="col-md-1">
+                          <a href="{{action('CandidateController@destroy', $c->id)}}" onclick="return confirm('Tem certeza?');">
+                              <i class="fas fa-trash-alt"></i>
+                          </a>
+                        </div>
+                        <div class="col-md-1">
+                          <a href="#">
+                              <i class="fas fa-file"></i>
+                          </a>
+                        </div>
+                      </div>
                     </td>
                 </tr>
             @endforeach
