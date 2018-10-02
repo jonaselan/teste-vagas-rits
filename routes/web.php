@@ -11,8 +11,10 @@
 |
 */
 
-// Home
+// Site
 Route::get('/', 'HomeController@site')->name('home.site');
+Route::get('/vaga/{id}', 'CandidateController@create')->name('candidate.create');
+Route::post('/vagas', 'CandidateController@store')->name('candidate.store');
 
 // Authentication
 Auth::routes();

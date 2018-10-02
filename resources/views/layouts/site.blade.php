@@ -14,29 +14,34 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/site.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img class="gallery" src="{{ asset('img/rits-carreiras.png') }}" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">A Rits</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nossos valores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Vagas abertas</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -45,6 +50,23 @@
         <main class="py-4 container">
             @yield('content')
         </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img class="gallery" src="{{ asset('img/rits-logo.png') }}" />
+                    </div>
+                    <div class="col-md-10 text-center">
+                        <span class="font-weight-bold">Rits Tecnologia. Todos os direitos reservados</span> <br/>
+                        Desenvolver e evoluir soluções digitais para negócios que acreditam na tecnologia como força propulsora.
+                    </div>
+                    <div class="col-md-1">
+                        Rits.com.br
+                    </div>
+                </div>
+            </div>
+          </footer>
     </div>
 </body>
 </html>
