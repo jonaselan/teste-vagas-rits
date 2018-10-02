@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="header">
+    <section class="header-rits">
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-4">
@@ -47,10 +47,10 @@
                   para oferecer as melhores possibilidades de transformar seus projetos em realidade.
                 </p>
                 <div class="row">
-                    <div class="col-md-6 col-6">
+                    <div class="col-lg-6 col-md-12 col-6">
                         <button class="btn btn1">Valores da gente</button>
                     </div>
-                    <div class="col-md-6 col-6">
+                    <div class="col-lg-6 col-md-12 col-6">
                         <button class="btn btn2">confira as vagas</button>
                     </div>
                 </div>
@@ -67,32 +67,90 @@
       </div>
     </section>
 
-    <section class="values">
-        <h1> NOSSOS VALORES </h1>
-        {{-- NUNCA DEIXE A EQUIPE NA MÃO --}}
-        {{-- “All for one and one for all, united we stand divided we fall.” --}}
-        {{-- Alexandre Dumas, The Three Musketeers --}}
+    <section class="values-rits">
+      <div class="container">
+        <div class="col-12 offset-md-0 offset-lg-3">
+          <div class="col-12">
+            <h1> NOSSOS VALORES </h1>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title">NUNCA DEIXE A EQUIPE NA MÃO</p>
+                  <p class="card-quote">“All for one and one for all, united we stand divided we fall.”</p>
+                  <p class="card-author">Alexandre Dumas, The Three Musketeers</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title">OLHOS NA TAREFA E CABEÇA NA SOLUÇÃO</p>
+                  <p class="card-quote">“Sword Of Omens, give me sight beyond sight.”</p>
+                  <p class="card-author">Buzz Lightyear, Toy Story</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title">FAÇA ACONTECER</p>
+                  <p class="card-quote">“Do. Or do not. There is no try.”</p>
+                  <p class="card-author">Master Yoda, The Empire Strikes Back</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title">FALHE RÁPIDO, MELHORE MAIS RÁPIDO AINDA</p>
+                  <p class="card-quote">“To infinity… and beyond!”</p>
+                  <p class="card-author">Buzz Lightyear, Toy Story</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title">SAIBA OU APRENDA</p>
+                  <p class="card-quote">“Be water, my friend.”</p>
+                  <p class="card-author">Bruce Lee</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        {{-- OLHOS NA TAREFA E CABEÇA NA SOLUÇÃO --}}
-        {{-- “Sword Of Omens, give me sight beyond sight.” --}}
-        {{-- Buzz Lightyear, Toy Story --}}
-
-        {{-- FAÇA ACONTECER --}}
-        {{-- “Do. Or do not. There is no try.” --}}
-        {{-- Master Yoda, The Empire Strikes Back --}}
-
-        {{-- FALHE RÁPIDO, MELHORE MAIS RÁPIDO AINDA --}}
-        {{-- “To infinity… and beyond!” --}}
-        {{-- Buzz Lightyear, Toy Story --}}
-
-        {{-- SAIBA OU APRENDA --}}
-        {{-- “Be water, my friend.” --}}
-        {{-- Bruce Lee --}}
+        </div>
+      </div>
     </section>
 
-    <section class="vacancies">
-        <h1>VAGAS EM ABERTO</h1>
-        <p>Conheça as oportunidades que temos em aberto.</p>
+    <section class="vacancies-rits">
+      <div class="container">
+        <div class="row justify-content-center">
+            <h1>VAGAS EM ABERTO</h1>
+        </div>
+        <div class="row justify-content-center">
+          <p>Conheça as oportunidades que temos em aberto.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-9">
+                  <p class="card-title">Card title</p>
+                  <p class="card-text"><img src="{{ asset('img/point.png') }}" alt=""> With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                <div class="col-lg-3">
+                  <a href="#" class="btn btn2">candidate-se</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
 @endsection

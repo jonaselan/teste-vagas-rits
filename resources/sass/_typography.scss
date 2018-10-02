@@ -1,5 +1,16 @@
 // size
-$big: 54px;
-$medium: 40px;
+$extra-big: 54px;
+$big: 40px;
+$extra-medium: 24px;
+$medium: 16px;
+$small: 12px;
 
-//
+// thickness
+$extra-thin: 100;
+$thin: 500;
+$normal: 700;
+$thick: 900;
+
+.font-small {
+  font-size: $small;
+}

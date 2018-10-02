@@ -2,12 +2,20 @@
   color: #FFFFFF;
 }
 
+.color-purple {
+  color: #563C8F;
+}
+
 .color-green {
   color: #ACCB34;
 }
 
 .color-green-light {
   color: #D3EA55;
+}
+
+.font-small {
+  font-size: 12px;
 }
 
 /*!
@@ -10480,7 +10488,7 @@ a.text-dark:focus {
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: #FFFFFF;
+  background-color: #F1F1F1;
 }
 
 .navbar-laravel {
@@ -10494,7 +10502,7 @@ body {
   color: #FFFFFF !important;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .nav-link:hover {
@@ -10527,7 +10535,7 @@ body {
   text-transform: uppercase;
   color: #ACCB34;
   background-color: rgba(255, 255, 255, 0);
-  font-weight: 600;
+  font-weight: 500;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -10542,7 +10550,7 @@ body {
   border-radius: 4px;
   text-transform: uppercase;
   color: #563C8F;
-  font-weight: 600;
+  font-weight: 500;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -10551,25 +10559,39 @@ body {
   color: #F1F1F1;
 }
 
-.header {
+.footer {
+  width: 100%;
+  height: 100px;
+  padding-top: 27px;
+  background-color: #FFFFFF;
+}
+
+.footer .footer-site {
+  font-size: 12px;
+  color: #563C8F;
+  font-weight: 16px;
+}
+
+.header-rits {
   background-image: url("/img/astronaut_header.png");
   background-size: cover;
   height: 630px;
   background-repeat: no-repeat;
 }
 
-.header .header-info {
+.header-rits .header-info {
   margin-top: 40%;
   color: #FFFFFF;
 }
 
-.header .header-info h1 {
+.header-rits .header-info h1 {
   font-size: 54px;
   font-weight: 900;
 }
 
 .about-rits {
-  margin-top: 100px;
+  margin-top: 7%;
+  margin-bottom: 10%;
 }
 
 .about-rits p {
@@ -10579,21 +10601,79 @@ body {
 .about-rits h1,
 .about-rits h2 {
   color: #563C8F;
-  font-weight: 1000;
+  font-weight: 700;
 }
 
 .about-rits h1 {
-  font-size: 54px;
-}
-
-.about-rits h2 {
   font-size: 40px;
 }
 
-.footer {
-  width: 100%;
-  height: 100px;
-  padding-top: 27px;
-  background-color: #FFFFFF;
+.about-rits h2 {
+  font-size: 24px;
+}
+
+.values-rits {
+  color: #FFFFFF;
+  background-image: url("/img/background.png");
+  background-size: cover;
+  height: 795px;
+  background-repeat: no-repeat;
+  margin-bottom: 10%;
+}
+
+.values-rits h1,
+.values-rits h2 {
+  font-weight: 700;
+}
+
+.values-rits h1 {
+  font-size: 40px;
+}
+
+.values-rits h2 {
+  font-size: 24px;
+}
+
+.values-rits .card {
+  background-color: rgba(255, 255, 255, 0);
+  width: 15rem;
+  border: 0;
+}
+
+.values-rits .card .card-title {
+  text-transform: uppercase;
+  color: #ACCB34;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.values-rits .card .card-quote {
+  font-weight: 700;
+}
+
+.vacancies-rits {
+  margin-bottom: 7%;
+}
+
+.vacancies-rits h1 {
+  text-align: center;
+  font-weight: 700;
+  color: #563C8F;
+}
+
+.vacancies-rits .card {
+  border: 0;
+}
+
+.vacancies-rits .card .card-title {
+  text-transform: uppercase;
+  color: #ACCB34;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.vacancies-rits .card .card-body {
+  width: 50rem;
+  text-align: left;
 }
 
