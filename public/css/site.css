@@ -10480,7 +10480,7 @@ a.text-dark:focus {
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: red;
+  background: #FFFFFF;
 }
 
 .navbar-laravel {
@@ -10521,7 +10521,7 @@ body {
 }
 
 .btn1 {
-  padding: 17px 25px;
+  padding: 17px 15px;
   border-radius: 4px;
   border: #ACCB34 solid 1px;
   text-transform: uppercase;
@@ -10533,11 +10533,11 @@ body {
 }
 
 .btn1:hover {
-  color: #F1F1F1;
+  color: #4D4D4D;
 }
 
 .btn2 {
-  padding: 17px 25px;
+  padding: 17px 15px;
   background: #ACCB34;
   border-radius: 4px;
   text-transform: uppercase;
@@ -10566,6 +10566,28 @@ body {
 .header .header-info h1 {
   font-size: 54px;
   font-weight: 900;
+}
+
+.about-rits {
+  margin-top: 100px;
+}
+
+.about-rits p {
+  color: #4D4D4D;
+}
+
+.about-rits h1,
+.about-rits h2 {
+  color: #563C8F;
+  font-weight: 1000;
+}
+
+.about-rits h1 {
+  font-size: 54px;
+}
+
+.about-rits h2 {
+  font-size: 40px;
 }
 
 .footer {

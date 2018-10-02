@@ -11,7 +11,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: red;
+  background: $white;
 }
 
 // ---- layout
@@ -52,7 +52,7 @@ body {
 }
 
 .btn1 {
-  padding: 17px 25px;
+  padding: 17px 15px;
   border-radius: 4px;
   border: $green solid 1px;
   text-transform: uppercase;
@@ -62,12 +62,12 @@ body {
   transition: 0.3s;
 
   &:hover {
-    color: $gray-light;
+    color: $gray;
   }
 }
 
 .btn2 {
-  padding: 17px 25px;
+  padding: 17px 15px;
   background: $green;
   border-radius: 4px;
   text-transform: uppercase;
@@ -101,6 +101,27 @@ body {
       font-size: $big;
       font-weight: 900;
     }
+  }
+}
+
+.about-rits {
+  margin-top: 100px;
+
+  p {
+    color: $gray;
+  }
+
+  h1, h2 {
+    color: $purple;
+    font-weight: 1000;
+  }
+
+  h1 {
+    font-size: $big;
+  }
+
+  h2 {
+    font-size: $medium;
   }
 }
 // ---- end home
