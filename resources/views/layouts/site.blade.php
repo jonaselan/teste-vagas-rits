@@ -11,20 +11,21 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> --}}
-
+    
     <!-- Styles -->
     @stack('styles')
-    {{-- <link href="{{ asset('css/site.css') }}" rel="stylesheet"> --}}
+
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+                  @if (Route::currentRouteName() == 'home.site')
                     <img class="gallery" src="{{ asset('img/rits-carreiras.png') }}" />
+                  @else
+                    <img class="gallery" src="{{ asset('img/rits-carreiras2.png') }}" />
+                  @endif
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

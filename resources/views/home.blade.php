@@ -18,10 +18,10 @@
                 </p>
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
-                        <a class="btn btn1">+ sobre a gente</a>
+                        <a href="#about-rits" class="btn btn1">+ sobre a gente</a>
                     </div>
                     <div class="col-md-6 col-sm-6">
-                        <a class="btn btn2">confira as vagas</a>
+                        <a href="#vacancies-rits" class="btn btn2">confira as vagas</a>
                     </div>
                 </div>
             </div>
@@ -47,10 +47,10 @@
                 </p>
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-6">
-                        <a class="btn btn1">Valores da gente</a>
+                        <a href="#values-rits" class="btn btn1">Valores da gente</a>
                     </div>
                     <div class="col-lg-6 col-md-12 col-6">
-                        <a class="btn btn2">confira as vagas</a>
+                        <a href="#vacancies-rits" class="btn btn2">confira as vagas</a>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,6 @@ body {
   background-color: $white;
 }
 
-// ---- layout
 .navbar-laravel {
   position: absolute;
   top: 40px;
@@ -23,12 +22,12 @@ body {
 }
 
 .nav-link{
-  color: $white !important;
+  color: $white;
   transition: 0.3s;
   font-weight: $normal;
 
   &:hover {
-    color: $purple !important;
+    color: $purple;
   }
 }
 
@@ -87,135 +86,7 @@ body {
   .footer-site {
     font-size: $small;
     color: $purple;
-    font-weight: $medium;
-  }
-
-}
-
-// ---- endlayout
-
-// ---- home
-
-// header
-#header-rits{
-  background-image: url("/img/astronaut_header.png");
-  background-size: cover;
-  height: 630px;
-  background-repeat: no-repeat;
-
-  .header-info{
-    margin-top: 40%;
-    color: $white;
-
-    h1  {
-      font-size: $extra-big;
-      font-weight: $thick;
-    }
-  }
-}
-// about
-#about-rits {
-  margin-top: 7%;
-  margin-bottom: 10%;
-
-  p {
-    color: $gray;
-  }
-
-  h1, h2 {
-    color: $purple;
     font-weight: $normal;
   }
 
-  h1 {
-    font-size: $big;
-  }
-
-  h2 {
-    font-size: $extra-medium;
-  }
 }
-// values
-#values-rits {
-  color: $white;
-  background-image: url("/img/background.png");
-  background-size: cover;
-  height: 795px;
-  background-repeat: no-repeat;
-
-  h1, h2 {
-    font-weight: $normal;
-  }
-
-  h1 {
-    font-size: $big;
-  }
-
-  h2 {
-    font-size: $extra-medium;
-  }
-
-  .values-mosaic{
-    img {
-      height: 400px;
-    }
-  }
-
-  .card {
-    background-color: $transparent;
-    width: 15rem;
-    border: 0;
-
-    .card-title {
-      text-transform: uppercase;
-      color: $green;
-      font-weight: $normal;
-      font-size: $small;
-    }
-    .card-quote{
-      font-weight: $normal;
-    }
-    // .card-author{
-    //
-    // }
-  }
-}
-// vacancies
-#vacancies-rits {
-  padding-top: 10%;
-  padding-bottom: 7%;
-  background-color: $gray-light;
-
-  h1 {
-    text-align: center;
-    font-weight: $normal;
-    color: $purple;
-  }
-
-  .card {
-    border: 0;
-
-    .card-title {
-      text-transform: uppercase;
-      color: $green;
-      font-weight: $normal;
-      font-size: $extra-medium;
-    }
-
-    .card-body {
-      width: 50rem;
-      text-align: left;
-    }
-  }
-}
-// ---- endhome
-
-// .CandidateController.create{
-
-  // vaga
-  #create-candidate {
-    margin-top: 10%;
-    color: $purple;
-  }
-  // ----- endvaga
-// }

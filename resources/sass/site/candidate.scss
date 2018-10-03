@@ -1,5 +1,67 @@
 @import '../general';
 
-body {
-  background-color: red; 
+.nav-link {
+  color: $purple !important;
+
+  &:hover {
+    color: $green !important;
+  }
+}
+
+#create-candidate {
+  margin-top: 170px;
+  color: $purple;
+
+  h2 {
+    font-weight: $thick;
+  }
+
+  .candidate-form {
+    margin: auto 20%;
+  }
+
+  .navbar-laravel {
+    border-bottom: solid $gray-light 1px;
+  }
+
+  .vacancy-details{
+    ul {
+      list-style: none
+    }
+
+    li::before {
+      content: "—";
+      color: $green;
+      display: inline-block;
+      width: 11px;
+      margin-left: -1em
+    }
+  }
+
+  .form-control {
+    &:focus{
+      box-shadow: 0 0 4px 0.1rem $purple;
+    }
+  }
+  .required-fields-candidate{
+    color: green;
+    font-weight: 900;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .input-curriculum {
+    border: 1px solid $purple;
+    display: inline-block;
+    padding: 12px 70px;
+    cursor: pointer;
+  }
+
+  .btn2 {
+    margin-top: 10px;
+    width: 100%;
+  }
+
 }
