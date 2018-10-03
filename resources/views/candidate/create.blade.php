@@ -1,4 +1,4 @@
-@extends('layouts.site')
+ @extends('layouts.site')
 
 @section('content')
   <div id="create-candidate">
@@ -12,13 +12,34 @@
         </div>
         <div class="col-lg-6">
           <p class="thickness-thick">Na função de <span class="color-green">Desenvolvedor Frontend</span> aqui na Rits, você vai:</p>
-          {{$fields['vacancy']->responsabilities}}
+          <ul>
+            @php($responsabilities = $fields['vacancy']->responsabilities)
+            @if ($responsabilities && (strpos($responsabilities, ';') !== false))
+              @foreach (explode(';', $responsabilities) as $item)
+                <li> {{$item}} </li>
+              @endforeach
+            @endif
+          </ul>
 
           <p class="thickness-thick">Procuramos <span class="color-green">alguém</span> que:</p>
-          {{$fields['vacancy']->skills}}
+          <ul>
+            @php($skills = $fields['vacancy']->skills)
+            @if ($skills && (strpos($skills, ';') !== false))
+              @foreach (explode(';', $skills) as $item)
+                <li> {{$item}} </li>
+              @endforeach
+            @endif
+          </ul>
 
           <p class="thickness-thick">No <span class="color-green">dia a dia</span> na Rits, você trabalhará também com:</p>
-          {{$fields['vacancy']->works}}
+          <ul>
+            @php($works = $fields['vacancy']->works)
+            @if ($works && (strpos($works, ';') !== false))
+              @foreach (explode(';', $works) as $item)
+                <li> {{$item}} </li>
+              @endforeach
+            @endif
+          </ul>
         </div>
       </div>
 
@@ -75,3 +96,7 @@
     </div>
   </div>
 @endsection
+
+@push('styles')
+    <link href="{{ asset('css/candidate.css') }}" rel="stylesheet">
+@endpush

@@ -10532,35 +10532,32 @@ body {
   color: #FFFFFF !important;
 }
 
-.btn1 {
+.btn1,
+.btn2,
+.btn3 {
   padding: 17px 15px;
   border-radius: 4px;
-  border: #ACCB34 solid 1px;
   text-transform: uppercase;
-  color: #ACCB34 !important;
-  background-color: rgba(255, 255, 255, 0);
   font-weight: 500;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.btn1:hover {
+.btn1:hover,
+.btn2:hover,
+.btn3:hover {
   color: #4D4D4D !important;
 }
 
-.btn2 {
-  padding: 17px 15px;
-  background: #ACCB34;
-  border-radius: 4px;
-  text-transform: uppercase;
-  color: #563C8F !important;
-  font-weight: 500;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.btn1 {
+  border: #ACCB34 solid 1px;
+  color: #ACCB34 !important;
+  background-color: rgba(255, 255, 255, 0);
 }
 
-.btn2:hover {
-  color: #F1F1F1 !important;
+.btn2 {
+  background: #ACCB34;
+  color: #563C8F !important;
 }
 
 .footer {

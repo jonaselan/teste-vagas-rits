@@ -41,7 +41,6 @@ class CandidateController extends Controller
 
     public function create(string $id){
       $this->msg['fields']['vacancy'] = Vacancy::find($id);
-      
       return view('candidate.create')->with($this->msg);
     }
 

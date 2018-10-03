@@ -160,3 +160,8 @@
     </section>
 
 @endsection
+
+<!-- Push a style dynamically from a view -->
+@push('styles')
+    <link href="{{ asset('css/site.css') }}" rel="stylesheet">
+@endpush
