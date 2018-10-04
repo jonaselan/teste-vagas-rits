@@ -18,6 +18,8 @@
               @foreach (explode(';', $responsabilities) as $item)
                 <li> {{$item}} </li>
               @endforeach
+            @else
+              {{ $responsabilities}}
             @endif
           </ul>
 
@@ -28,6 +30,8 @@
               @foreach (explode(';', $skills) as $item)
                 <li> {{$item}} </li>
               @endforeach
+            @else
+              {{ $skills }}
             @endif
           </ul>
 
@@ -38,6 +42,8 @@
               @foreach (explode(';', $works) as $item)
                 <li> {{$item}} </li>
               @endforeach
+            @else
+              {{ $works }}
             @endif
           </ul>
         </div>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 trait CandidateTrait
 {
     public function downloadCurriculum($path){
+      // usando encode para dar um "escape" no caminho do arquivo
       $path = base64_decode($path);
       $fs = Storage::getDriver();
       $stream = $fs->readStream($path);

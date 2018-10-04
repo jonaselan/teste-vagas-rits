@@ -50,8 +50,11 @@ class CandidateController extends Controller
     public function store(CandidateRequest $request){
       try {
         if ($candidate = $this->repository->create($request->all())) {
+          // se cadastrar com sucesso, fazer o upload do curriculo
           $path = $request->file('curriculum_file')->store('curriculums');
+          // e salvar o caminho no model
           $candidate->update(['curriculum' => $path]);
+
           $this->msg['success'][] = "Registro realizado com sucesso!";
         }
       } catch (\Exception $e) {
@@ -65,5 +68,4 @@ class CandidateController extends Controller
     public function download(string $path) {
       return $this->downloadCurriculum($path);
     }
-
 }

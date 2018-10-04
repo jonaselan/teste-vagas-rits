@@ -146,21 +146,22 @@
         </div>
         <div class="row justify-content-center">
           @foreach($fields['vacancies'] as $v)
-            <div class="card">
+            <div class="card card mb-3" style="width: 50em;">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-lg-7">
-                    <p class="card-title">{{ $v->title }}</p>
+                  <div class="col-lg-9 col-md-9">
+                    <h5 class="card-title">{{ $v->title }}</h5>
                     <p class="card-text"><img src="{{ asset('img/point.png') }}" alt="">
                       {{ $v->location }}
                     </p>
                   </div>
-                  <div class="col-lg-4">
+                  <div class="col-lg-3 col-md-3">
                     <a href="{{action('CandidateController@create', $v->id) }}" class="btn btn2">candidate-se</a>
                   </div>
                 </div>
               </div>
             </div>
+
           @endforeach
         </div>
       </div>
