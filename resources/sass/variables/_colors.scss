@@ -10,6 +10,10 @@ $gray2: #231F20;
 $red: #EF3F6E;
 $transparent: rgba(255, 255, 255, 0);
 
+.color-red {
+  color: $red !important;
+}
+
 .color-white {
   color: $white;
 }

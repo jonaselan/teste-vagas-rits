@@ -11,17 +11,18 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
     <!-- Styles -->
     @stack('styles')
 
 </head>
 <body>
+    @php($home = Route::currentRouteName() == 'home.site')
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-{{$home ? 'dark' : 'light'}} navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                  @if (Route::currentRouteName() == 'home.site')
+                  @if ($home)
                     <img class="gallery" src="{{ asset('img/rits-carreiras.png') }}" />
                   @else
                     <img class="gallery" src="{{ asset('img/rits-carreiras2.png') }}" />

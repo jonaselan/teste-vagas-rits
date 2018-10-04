@@ -20,14 +20,20 @@ body {
   width: 100%;
   z-index: 10;
 }
+.navbar-nav {
+  .ml-auto {
+    background-color: $gray;
+    padding: 10px;
+  }
+}
 
 .nav-link{
-  color: $white;
+  color: $white !important;
   transition: 0.3s;
   font-weight: $normal;
 
   &:hover {
-    color: $purple;
+    color: $purple !important;
   }
 }
 
@@ -89,4 +95,13 @@ body {
     font-weight: $normal;
   }
 
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: 576px) {
+    text-align: center;
+    padding-bottom: 20px;
+  }
 }

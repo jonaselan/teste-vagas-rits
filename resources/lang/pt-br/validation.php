@@ -114,6 +114,11 @@ return [
         'responsabilities' => 'responsabilidades',
         'works' => 'tarefas diárias',
         'password' => 'senha',
+        'name' => 'nome',
+        'phone' => 'telefone',
+        'english' => 'inglês',
+        'desired_salary' => 'pretensão salarial',
+        'curriculum' => 'currículo'
     ],
 
 ];

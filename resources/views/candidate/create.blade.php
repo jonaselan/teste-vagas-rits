@@ -45,18 +45,22 @@
 
       <div class="candidate-form">
         {!! Form::open(['route' => 'candidate.store', 'method'=>'post', 'files' => true])!!}
+        {{ Form::hidden('vacancy_id', $fields['vacancy']->id)}}
         <h2>Informações pessoais</h2>
         <div class="form-group">
           {!! Form::label('name', 'Nome Completo:') !!} <span class="required-fields-candidate">*</span>
           {!! Form::text('name', null, ['class'=> "form-control"]) !!}
+          <small class="color-red">{{($errors->has('name') ? $errors->first('name') : '')}}</small>
         </div>
         <div class="form-group">
           {!! Form::label('email', 'E-mail:') !!} <span class="required-fields-candidate">*</span>
-          {!! Form::text('email', null, ['class'=>'form-control']) !!}
+          {!! Form::text('email', null, ['class'=>"form-control"]) !!}
+          <small class="color-red">{{($errors->has('email') ? $errors->first('email') : '')}}</small>
         </div>
         <div class="form-group">
           {!! Form::label('phone', 'Telefone (Com DDD):') !!} <span class="required-fields-candidate">*</span>
-          {!! Form::text('phone', null, ['class'=>'form-control']) !!}
+          {!! Form::text('phone', null, ['class'=>"form-control"]) !!}
+          <small class="color-red">{{($errors->has('phone') ? $errors->first('phone') : '')}}</small>
         </div>
 
         <h2>Carta de apresentação</h2>
@@ -67,30 +71,36 @@
 
         <h2>Últimas perguntas</h2>
         <div class="form-group">
-          {!! Form::label('linkedin', 'Url do seu linkedin:') !!} <span class="required-fields-candidate">*</span>
-          {!! Form::text('linkedin', null, ['class'=>'form-control']) !!}
+          {!! Form::label('linkedin', 'Url do seu Linkedin:') !!} <span class="required-fields-candidate">*</span>
+          {!! Form::text('linkedin', null, ['class'=>"form-control"]) !!}
+          <small class="color-red">{{($errors->has('linkedin') ? $errors->first('linkedin') : '')}}</small>
         </div>
         <div class="form-group">
-          {!! Form::label('github', 'Url do seu github:') !!} <span class="required-fields-candidate">*</span>
-          {!! Form::text('github', null, ['class'=>'form-control']) !!}
+          {!! Form::label('github', 'Url do seu Github:') !!} <span class="required-fields-candidate">*</span>
+          {!! Form::text('github', null, ['class'=>"form-control"]) !!}
+          <small class="color-red">{{($errors->has('github') ? $errors->first('github') : '')}}</small>
         </div>
         <div class="form-group">
           {!! Form::label('english', 'Qual o seu nível de inglês?:') !!} <span class="required-fields-candidate">*</span>
-          {!! Form::text('english', null, ['class'=>'form-control']) !!}
+          {!! Form::select('english', ['básico' => 'básico', 'intermediario' => 'intermediario', 'avançado' => 'avançado'],
+                                      null, ['placeholder' => '', 'class' => 'form-control']) !!}
+          {{-- {!! Form::text('english', null, ['class'=>"form-control ".($errors->has('english') ? 'field-required' : '')]) !!} --}}
+          <small class="color-red">{{($errors->has('english') ? $errors->first('english') : '')}}</small>
         </div>
         <div class="form-group">
-          {!! Form::label('desired_salary', 'pretensão salarial:') !!} <span class="required-fields-candidate">*</span>
-          {!! Form::text('desired_salary', null, ['class'=>'form-control']) !!}
+          {!! Form::label('desired_salary', 'Pretensão salarial:') !!} <span class="required-fields-candidate">*</span>
+          {!! Form::text('desired_salary', null, ['class'=>"form-control"]) !!}
+          <small class="color-red">{{($errors->has('desired_salary') ? $errors->first('desired_salary') : '')}}</small>
         </div>
 
         <h2>Anexe seu currículo em PDF ou DOC</h2>
         <div class="form-group">
-          {!! Form::label('curriculum', 'Pretensão salarial:') !!} <span class="required-fields-candidate">*</span><br>
-          {{-- {!! Form::file('curriculum', ['class' => 'input-curriculum']) !!} --}}
+          {!! Form::label('curriculum_file', 'Pretensão salarial:') !!} <span class="required-fields-candidate">*</span><br>
           <label for="file-upload" class="input-curriculum">
               Escolher arquivo
           </label>
-          <input id="file-upload" type="file"/>
+          <input id="file-upload" name="curriculum_file" type="file"/><br>
+          <small class="color-red">{{($errors->has('curriculum') ? $errors->first('curriculum') : '')}}</small>
         </div>
 
         <div class="form-group">

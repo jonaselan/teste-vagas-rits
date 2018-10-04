@@ -8,6 +8,11 @@
   }
 }
 
+.field-required {
+  color: $red;
+  border: solid $red 2px;
+}
+
 #create-candidate {
   margin-top: 170px;
   color: $purple;
@@ -43,6 +48,7 @@
       box-shadow: 0 0 4px 0.1rem $purple;
     }
   }
+
   .required-fields-candidate{
     color: green;
     font-weight: 900;

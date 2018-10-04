@@ -1,7 +1,7 @@
 @extends('layouts.site')
 
 @section('content')
-
+  @include('shared.messages')
     <section id="header-rits">
       <div class="container">
         <div class="row">
@@ -17,10 +17,10 @@
                     projetos que participa, temos uma oportunidade para você.
                 </p>
                 <div class="row">
-                    <div class="col-md-6 col-sm-6">
+                    <div class="col-md-6 col-sm-6 col-6">
                         <a href="#about-rits" class="btn btn1">+ sobre a gente</a>
                     </div>
-                    <div class="col-md-6 col-sm-6">
+                    <div class="col-md-6 col-sm-6 col-6">
                         <a href="#vacancies-rits" class="btn btn2">confira as vagas</a>
                     </div>
                 </div>
@@ -67,16 +67,23 @@
     </section>
 
     <section id="values-rits">
-      <div class="values-mosaic">
-        <img src="{{asset('img/mosaic.png')}}" alt="">
+      <div class="row">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <div class="values-mosaic">
+              <img class="img-fluid" src="{{asset('img/mosaic.png')}}" alt="">
+            </div>
+          </div>
+        </div>
       </div>
+
       <div class="container">
         <div class="col-12 offset-md-0 offset-lg-3">
           <div class="col-12">
             <h1> NOSSOS VALORES </h1>
           </div>
           <div class="row">
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-12">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">NUNCA DEIXE A EQUIPE NA MÃO</p>
@@ -85,7 +92,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-12">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">OLHOS NA TAREFA E CABEÇA NA SOLUÇÃO</p>
@@ -94,7 +101,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-12">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">FAÇA ACONTECER</p>
@@ -105,7 +112,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-12">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">FALHE RÁPIDO, MELHORE MAIS RÁPIDO AINDA</p>
@@ -114,7 +121,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-3 col-md-4 col-12">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">SAIBA OU APRENDA</p>
@@ -142,13 +149,13 @@
             <div class="card">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-lg-9">
+                  <div class="col-lg-7">
                     <p class="card-title">{{ $v->title }}</p>
                     <p class="card-text"><img src="{{ asset('img/point.png') }}" alt="">
                       {{ $v->location }}
                     </p>
                   </div>
-                  <div class="col-lg-3">
+                  <div class="col-lg-4">
                     <a href="{{action('CandidateController@create', $v->id) }}" class="btn btn2">candidate-se</a>
                   </div>
                 </div>
@@ -163,5 +170,5 @@
 
 <!-- Push a style dynamically from a view -->
 @push('styles')
-    <link href="{{ asset('css/site.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endpush
