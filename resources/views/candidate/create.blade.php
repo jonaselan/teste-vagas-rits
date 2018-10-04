@@ -19,7 +19,7 @@
                 <li> {{$item}} </li>
               @endforeach
             @else
-              {{ $responsabilities}}
+              <li> {{ $responsabilities}} </li>
             @endif
           </ul>
 
@@ -31,7 +31,7 @@
                 <li> {{$item}} </li>
               @endforeach
             @else
-              {{ $skills }}
+              <li> {{ $skills }} </li>
             @endif
           </ul>
 
@@ -43,7 +43,7 @@
                 <li> {{$item}} </li>
               @endforeach
             @else
-              {{ $works }}
+              <li> {{ $works }} </li>
             @endif
           </ul>
         </div>

@@ -1,65 +1,96 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# RITS (TESTE)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Ferramentas
 
-## About Laravel
+- [Laravel](https://laravel.com) (5.7)
+- [MariaDB](https://mariadb.org/)
+- [Docker](https://www.docker.com/)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## Configurando
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Para criar o ambiente, foi utilizado a ferramenta [Laradock](http://laradock.io/getting-started/), que auxila a criação de ambientes PHP, isolados ou compartilhados, via containers Docker.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+### 1 - Faça o clone projeto
 
-## Learning Laravel
+```bash
+# https
+git clone https://github.com/jonaselan/teste-vagas-rits.git
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+# ssh
+git clone git@github.com:jonaselan/teste-vagas-rits.git
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+```
 
-## Laravel Sponsors
+### 2. Inicie o [submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+```bash
+git submodule init && git submodule update
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
+### 3 - Copie o `.env`
 
-## Contributing
+Há um exemplo do arquivo de configuração que deve ser tomado como exemplo. Para isso utilize os comandos:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+cd ritsdock
 
-## Security Vulnerabilities
+cp env-example .env
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 4 - Configurar o `.env`
 
-## License
+Aqui é onde vai ser definido os softwares necessários para o desenvolvimento do projeto. Eles irão ser referenciados no `docker-compose.yml`, então se for do seu interesse, pode verificar nesse arquivo também. Abaixo é exposto o modelo de como o seu `.env` deve estar:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+### Application Path
+# Seu código estará disponivel em `/var/www`.
+
+APPLICATION=../
+
+# Mudar nome do volume para que seja possí­vel criar outros ambientes laradock caso seja necessário
+COMPOSE_PROJECT_NAME=ritsdock
+
+### PHP Version
+PHP_VERSION=7.2
+[...]
+
+```
+
+### 5 - Construir e rodar ambiente
+
+Os únicos containers que você precisará serão o NGINX (web server) e o Mariadb (banco de dados).
+
+```bash
+docker-compose up -d nginx mariadb
+```
+
+Mas você pode substituir pelo mysql e o apache2, mas por conversão, foi utilizado esses dois containers, por facilidade de configuração e desenvolvimento.
+
+## Configurar aplicação Laravel
+
+Quando você clonar a aplicação para sua máquina, alguns arquivos/pastas essenciais para a execução perfeita do projeto não são baixados, como o arquivo `.env` (contém as variáveis de ambiente, que pode mudar de acordo com cada ambiente, por isso não é recomendavél versioná-lo) e o diretório vendor (é onde fica o source code laravel, plugins e outras dependências. Tudo que você usar de terceiros fica aqui). Logo é preciso executar alguns comandos para gerar no seu ambiente. A seguir os comandos que você deve executar para configuração.
+
+ ```bash
+ # instalar dependências do PHP de acordo com o composer.lock (se existir)
+ composer install
+
+ # você deve adaptar o .env para suas necessidades
+ cp .env.example .env
+
+ # gera key unica da sua aplicação, por questãµes de segurança
+ php artisan key:generate
+
+ # após configurar o banco 
+ # executar migration
+ php artisan migrate
+
+ # executar migration
+ php artisan db:seed
+
+ # instalar dependências javascript/estilo com base no package-lock.json
+ npm install
+
+# ou compilar assets (para o site)
+ npm run dev
+
+ ```

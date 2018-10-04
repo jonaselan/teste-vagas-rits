@@ -67,7 +67,7 @@
     </section>
 
     <section id="values-rits">
-      <div class="row">
+      <div class="row m-0">
         <div class="col">
           <div class="d-flex justify-content-center">
             <div class="values-mosaic">
