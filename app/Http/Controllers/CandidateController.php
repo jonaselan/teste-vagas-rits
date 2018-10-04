@@ -6,9 +6,12 @@ use App\Vacancy;
 use App\Repositories\CandidateRepository;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\CandidateRequest;
+use App\Traits\CandidateTrait;
 
 class CandidateController extends Controller
 {
+    use CandidateTrait;
+
     private $repository;
 
     public function __construct(CandidateRepository $repository) {
@@ -45,14 +48,22 @@ class CandidateController extends Controller
     }
 
     public function store(CandidateRequest $request){
-      $candidate = $this->repository->create($request->all());
-      // if ($candidate = $this->repository->create($request->all())) {
-      //     $this->msg['success'][] = "Vaga cadastrada com sucesso!";
-      // } else {
-      //     $this->msg['error'][] = 'Erro! Vaga não foi cadastrada';
-      // }
+      try {
+        if ($candidate = $this->repository->create($request->all())) {
+          $path = $request->file('curriculum_file')->store('curriculums');
+          $candidate->update(['curriculum' => $path]);
+          $this->msg['success'][] = "Registro realizado com sucesso!";
+        }
+      } catch (\Exception $e) {
+        $this->msg['error'][] = 'Erro! Sua candidatura não foi cadastrada. Desculpe';
+      }
 
-      return redirect()->action('HomeController@site');
+      return redirect()->action('HomeController@site')
+                       ->with($this->msg);
+    }
+
+    public function download(string $path) {
+      return $this->downloadCurriculum($path);
     }
 
 }

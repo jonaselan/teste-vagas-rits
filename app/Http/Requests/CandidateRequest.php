@@ -30,7 +30,7 @@ class CandidateRequest extends FormRequest
             'linkedin' => 'required',
             'github' => 'required',
             'desired_salary' => 'required',
-            'curriculum' => 'required',
+            'curriculum_file' => 'required|file|mimes::doc,pdf,docx|max:2048',
             'english' => 'required'
         ];
     }

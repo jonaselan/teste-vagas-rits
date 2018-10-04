@@ -35,7 +35,7 @@
                           </a>
                         </div>
                         <div class="col-md-1">
-                          <a href="#">
+                          <a href="{!! route('candidate.curriculum', ['path' => base64_encode($c->curriculum)]) !!}">
                               <i class="fas fa-file"></i>
                           </a>
                         </div>

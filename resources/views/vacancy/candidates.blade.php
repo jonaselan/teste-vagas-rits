@@ -22,7 +22,11 @@
                   @foreach($vacancy->candidates as $c)
                       <tr>
                           <td>{{ $c->name }} </td>
-                          <td>LINK PARA CURRICULO: {{ $c->curriculum }} </td>
+                          <td>
+                            <a href="{!! route('candidate.curriculum', ['path' => base64_encode($c->curriculum)]) !!}">
+                                BAIXAR
+                            </a>
+                          </td>
                       </tr>
                   @endforeach
               </table>

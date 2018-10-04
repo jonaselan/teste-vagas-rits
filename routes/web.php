@@ -38,5 +38,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'where'=>['id'=>'[0-9
     Route::get('', 'CandidateController@index')->name('candidates');
     Route::get('{id}/status/{status}', 'CandidateController@update')->name('candidate.status');
     Route::get('deletar/{id}', 'CandidateController@destroy')->name('candidate.destroy');
+    Route::get('curriculum/{path}', 'CandidateController@download')->name('candidate.curriculum');
   });
 });

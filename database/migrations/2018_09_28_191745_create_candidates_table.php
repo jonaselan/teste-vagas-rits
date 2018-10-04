@@ -18,11 +18,11 @@ class CreateCandidatesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->string('motivation');
+            $table->string('motivation')->nullable();
             $table->string('linkedin');
             $table->string('github');
             $table->float('desired_salary');
-            $table->string('curriculum');
+            $table->string('curriculum')->nullable();
             $table->enum('status', ['candidatado', 'analisado', 'negado', 'contratado'])->default('candidatado');
             $table->enum('english', ['básico', 'intermediario', 'avançado']);
             $table->integer('vacancy_id')->unsigned()->nullable();
