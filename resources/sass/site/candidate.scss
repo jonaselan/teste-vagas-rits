@@ -8,9 +8,18 @@
   }
 }
 
+.navbar-laravel {
+  border-bottom: 1px solid $gray-light;
+}
+
 .field-required {
   color: $red;
   border: solid $red 2px;
+}
+
+.footer {
+  border-top: 1px solid $gray-light;
+  margin-top: 100px;
 }
 
 #create-candidate {

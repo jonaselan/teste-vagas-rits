@@ -37,13 +37,13 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#about-rits">A Rits</a>
+                            <a class="nav-link" href="{{$home ? '' : config('app.url')}}#about-rits">A Rits</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#values-rits">Nossos valores</a>
+                            <a class="nav-link" href="{{$home ? '' : config('app.url')}}#values-rits">Nossos valores</a>
                         </li>
                         <li class="nav-item vacancy-link">
-                            <a class="nav-link" href="#vacancies-rits">Vagas abertas</a>
+                            <a class="nav-link" href="{{$home ? '' : config('app.url')}}#vacancies-rits">Vagas abertas</a>
                         </li>
                     </ul>
                 </div>
@@ -60,7 +60,7 @@
                     <div class="col-md-1">
                         <img class="gallery" src="{{ asset('img/rits-logo.png') }}" />
                     </div>
-                    <div class="col-md-10 text-center font-small">
+                    <div class="col-md-10 text-center font-small color-gray">
                         <span class="font-weight-bold">Rits Tecnologia. Todos os direitos reservados</span> <br/>
                         Desenvolver e evoluir soluções digitais para negócios que acreditam na tecnologia como força propulsora.
                     </div>

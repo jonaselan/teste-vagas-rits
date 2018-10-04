@@ -4,7 +4,7 @@
   <div id="create-candidate">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 align-self-center">
           <h1 class="thickness-thick">{{$fields['vacancy']->title}}</h1>
           <p><img src="{{ asset('img/point2.png') }}" alt="">
             {{$fields['vacancy']->location}}
